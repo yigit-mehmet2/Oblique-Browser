@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oblique Browser</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="tab-bar"></div>
+	<div id="nav-bar">
+		<button id="back-btn" class="nav-btn">⬅</button>
+		<button id="forward-btn" class="nav-btn">➡</button>
+		<button id="reload-btn" class="nav-btn">↻</button>
+						
+		<select id="search-engine-select">
+			<option value="duckduckgo">DuckDuckGo</option>
+			<option value="bing">Bing</option>
+			<option value="google">Google</option>
+		</select>
+		
+		<input type="text" id="url-input" placeholder="Please Write Web Address (example: https://google.com)">
+		<button id="go-btn">Go</button>
+
+		<button id="btn-settings" class="nav-btn" title="Settings">⚙️</button>
+	</div>
+
+	<div id="settings-modal" class="modal hidden">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Oblique Browser Settings</h2>
+				<button id="close-settings" class="close-btn">&times;</button>
+			</div>
+
+			<section class="settings-section">
+				<h3>[General Settings]</h3>
+
+				<div class="field">
+					<label for="setting-engine">Default Search Engine</label>
+					<select id="setting-engine">
+						<option value="duckduckgo">DuckDuckGo</option>
+						<option value="bing">Bing</option>
+						<option value="google">Google</option>
+					</select>
+				</div>
+
+				<div class="field">
+					<label for="setting-theme">Theme</label>
+					<select id="setting-theme">
+						<option value="dark">Light Mode ☀️ </option>
+						<option value="light">Dark Mode 🌙</option>
+					</select>
+				</div>
+			</section>
+
+			<hr class="divider" />
+			<h3>[Privacy Settings]</h3>
+			<section class="settings-section">
+				<div class="radio-group">
+					<label style="opacity: 0.5; cursor: not-allowed;"><input type="radio" name="privacy-level" value="love" disabled> Love Google <i>(No Privacy)</i></label>
+					<br>
+					<label style="opacity: 0.5; cursor: not-allowed;"><input type="radio" name="privacy-level" value="normal" checked disabled> Normal <i>(Some Privacy)</i></label>
+					<br>
+					<label style="opacity: 0.5; cursor: not-allowed;"><input type="radio" name="privacy-level" value="strict" disabled> Strict <i>(GOOGLE... I WANT TO TELL YOU SOMETHING)</i></label>
+				</div>
+
+				<div class="support-area disabled-feature">
+					<label style="opacity: 0.5; cursor: not-allowed;">
+						<input type="checkbox" id="ads-toggle" disabled>
+						Turn on privacy-friendly ads to support the developer
+						<span class="badge">(Locked)</span>
+					</label>
+				</div>
+			</section>
+
+			<div class="modal-footer">
+				<button id="save-settings-btn">Save & Apply</button>
+			</div>
+		</div>
+	</div>
+	
+	<script src="renderer.js"></script>
+</body>
+</html>
